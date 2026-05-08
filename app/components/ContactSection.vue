@@ -19,44 +19,50 @@
               </svg>
               <p class="text-red-800 dark:text-red-200 font-medium">{{ errorMessage }}</p>
             </div>
-            <form @submit.prevent="handleSubmit" class="space-y-5">
+            <form @submit.prevent="handleSubmit" novalidate class="space-y-5">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Nombre *</label>
-                  <input type="text" v-model="form.name" required :disabled="isSubmitting"
-                    class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all disabled:opacity-50"
-                    placeholder="Tu nombre" />
+                  <input type="text" v-model="form.name" :disabled="isSubmitting"
+                    :class="inputClass('name')"
+                    placeholder="Tu nombre"
+                    @blur="touch('name')" />
+                  <p v-if="errors.name" class="mt-1.5 text-xs text-brand-red">{{ errors.name }}</p>
                 </div>
                 <div>
                   <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Empresa</label>
                   <input type="text" v-model="form.company" :disabled="isSubmitting"
-                    class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all disabled:opacity-50"
+                    :class="inputClass()"
                     placeholder="Tu empresa" />
                 </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email *</label>
-                  <input type="email" v-model="form.email" required :disabled="isSubmitting"
-                    class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all disabled:opacity-50"
-                    placeholder="tu@empresa.cl" />
+                  <input type="email" v-model="form.email" :disabled="isSubmitting"
+                    :class="inputClass('email')"
+                    placeholder="tu@empresa.cl"
+                    @blur="touch('email')" />
+                  <p v-if="errors.email" class="mt-1.5 text-xs text-brand-red">{{ errors.email }}</p>
                 </div>
                 <div>
                   <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Teléfono</label>
                   <input type="tel" v-model="form.phone" :disabled="isSubmitting"
-                    class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all disabled:opacity-50"
+                    :class="inputClass()"
                     placeholder="+56 9 XXXX XXXX" />
                 </div>
               </div>
               <div>
                 <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Mensaje *</label>
-                <textarea v-model="form.message" rows="4" required :disabled="isSubmitting"
-                  class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all resize-none disabled:opacity-50"
-                  placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                <textarea v-model="form.message" rows="4" :disabled="isSubmitting"
+                  :class="inputClass('message')"
+                  placeholder="Cuéntanos en qué podemos ayudarte..."
+                  @blur="touch('message')"></textarea>
+                <p v-if="errors.message" class="mt-1.5 text-xs text-brand-red">{{ errors.message }}</p>
               </div>
               <button type="submit" :disabled="isSubmitting"
-                class="w-full px-6 py-4 bg-brand-red text-white font-bold rounded-xl hover:bg-brand-red-dark transition-all shadow-lg disabled:opacity-50 flex items-center justify-center gap-2">
-                <svg v-if="isSubmitting" class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                class="w-full px-6 py-4 bg-brand-red text-white font-bold rounded-xl hover:bg-brand-red-dark transition-all shadow-lg disabled:opacity-70 flex items-center justify-center gap-2">
+                <svg v-if="isSubmitting" class="animate-spin h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
@@ -100,15 +106,66 @@ const form = ref({ name: '', email: '', company: '', phone: '', message: '' })
 const isSubmitting = ref(false)
 const submitStatus = ref<'idle' | 'success' | 'error'>('idle')
 const errorMessage = ref('')
+const touched = ref<Record<string, boolean>>({})
+const errors = ref<Record<string, string>>({})
+
+const baseInput = 'w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all resize-none disabled:opacity-50'
+
+const inputClass = (field?: string) => [
+  baseInput,
+  field && errors.value[field]
+    ? 'border-brand-red'
+    : 'border-gray-300 dark:border-gray-600',
+]
+
+const touch = (field: string) => {
+  touched.value[field] = true
+  validate(field)
+}
+
+const validate = (field?: string) => {
+  const fields = field ? [field] : ['name', 'email', 'message']
+  let valid = true
+  for (const f of fields) {
+    if (f === 'name' && !form.value.name.trim()) {
+      errors.value.name = 'El nombre es requerido'
+      valid = false
+    } else if (f === 'name') {
+      delete errors.value.name
+    }
+    if (f === 'email') {
+      if (!form.value.email.trim()) {
+        errors.value.email = 'El email es requerido'
+        valid = false
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email)) {
+        errors.value.email = 'Ingresa un email válido'
+        valid = false
+      } else {
+        delete errors.value.email
+      }
+    }
+    if (f === 'message' && !form.value.message.trim()) {
+      errors.value.message = 'El mensaje es requerido'
+      valid = false
+    } else if (f === 'message') {
+      delete errors.value.message
+    }
+  }
+  return valid
+}
 
 const handleSubmit = async () => {
-  if (isSubmitting.value) return
+  touched.value = { name: true, email: true, message: true }
+  if (!validate() || isSubmitting.value) return
+
   isSubmitting.value = true
   submitStatus.value = 'idle'
   try {
     await $fetch('/api/contact', { method: 'POST', body: { ...form.value } })
     submitStatus.value = 'success'
     form.value = { name: '', email: '', company: '', phone: '', message: '' }
+    touched.value = {}
+    errors.value = {}
     setTimeout(() => { submitStatus.value = 'idle' }, 5000)
   } catch (error: any) {
     submitStatus.value = 'error'
@@ -128,7 +185,7 @@ const contactInfo = [
   },
   {
     label: 'Teléfono',
-    value: '+56 9 [pendiente]',
+    value: '+56 9 1234 5678',
     href: 'tel:+56912345678',
     iconPath: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />',
   },

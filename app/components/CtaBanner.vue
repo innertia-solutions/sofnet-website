@@ -1,7 +1,5 @@
 <template>
-  <section class="py-20 bg-brand-navy dark:bg-gray-950 text-white relative overflow-hidden">
-    <!-- Fade transition from the section above -->
-    <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white dark:from-brand-navy to-transparent pointer-events-none z-10"></div>
+  <section class="py-32 bg-brand-navy dark:bg-gray-950 text-white relative overflow-hidden" style="clip-path: ellipse(120% 100% at 50% 50%)">
     <div class="absolute inset-0 opacity-5"
       style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 40px 40px;">
     </div>

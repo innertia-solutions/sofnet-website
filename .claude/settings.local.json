@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm add *)",
+      "Bash(pnpm remove *)",
+      "Bash(pnpm search *)",
+      "Bash(node -e \"const m = require\\('maileroo'\\); console.log\\(Object.keys\\(m\\)\\)\")"
+    ]
+  }
+}

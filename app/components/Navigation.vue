@@ -7,7 +7,7 @@
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
         <a href="#" class="flex items-center gap-3">
-          <img src="/logo-sofnet.png" alt="Sofnet" class="h-8 w-auto dark:brightness-0 dark:invert" />
+          <img src="/logo-sofnet.png" alt="Sofnet" class="h-6 w-auto dark:brightness-0 dark:invert" />
         </a>
 
         <!-- Desktop Navigation -->
