@@ -4,7 +4,12 @@
       "Bash(pnpm add *)",
       "Bash(pnpm remove *)",
       "Bash(pnpm search *)",
-      "Bash(node -e \"const m = require\\('maileroo'\\); console.log\\(Object.keys\\(m\\)\\)\")"
+      "Bash(node -e \"const m = require\\('maileroo'\\); console.log\\(Object.keys\\(m\\)\\)\")",
+      "Bash(sed -n '178,190p' /Users/guillermofarias/Sites/inertia/sonfet/app/components/ContactSection.vue)",
+      "Bash(sed -n '44,52p' /Users/guillermofarias/Sites/inertia/sonfet/app/components/Footer.vue)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }

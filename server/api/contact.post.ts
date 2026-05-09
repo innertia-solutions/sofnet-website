@@ -13,9 +13,9 @@ export default defineEventHandler(async (event) => {
   }
 
   const client = new MailerooClient(apiKey)
-  client.setFrom('contacto@sofnet.cl', 'Sofnet Web')
-  client.setTo(process.env.MAILEROO_RECEIVER_EMAIL || 'contacto@sofnet.cl')
-  client.setReplyTo(email)
+  client.setFrom('Sofnet Web', 'contacto@sofnet.cl')
+  client.setTo('Sofnet Contacto', process.env.MAILEROO_RECEIVER_EMAIL || 'contacto@sofnet.cl')
+  client.setReplyTo(name, email)
   client.setSubject(`Nuevo contacto Sofnet: ${name}`)
   client.setHtml(`
     <h2>Nuevo mensaje desde sofnet.cl</h2>
