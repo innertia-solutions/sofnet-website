@@ -1,0 +1,8 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  # Omit MAILEROO_RECEIVER_EMAIL from secrets scanning — its value (contacto@sofnet.cl)
+  # is a public contact email intentionally displayed on the website.
+  SECRETS_SCAN_OMIT_KEYS = "MAILEROO_RECEIVER_EMAIL"
