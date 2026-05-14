@@ -14,7 +14,7 @@
             </NuxtLink>
             <span class="hidden sm:inline-block h-6 w-px bg-gray-300 dark:bg-brand-navy-mid"></span>
             <span class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 dark:bg-red-900/30 text-brand-red dark:text-red-300 text-xs font-semibold uppercase tracking-wide">
-              Presentación · Agrosuper
+              Propuesta de servicios y productos
             </span>
           </div>
           <div class="hidden lg:flex items-center gap-8">
@@ -54,13 +54,13 @@
             <div class="lg:col-span-7 text-white space-y-6">
               <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md text-sm font-semibold uppercase tracking-wide">
                 <span class="w-2 h-2 rounded-full bg-brand-red"></span>
-                Propuesta para Agrosuper · {{ presentationDate }}
+                Servicios y productos Sofnet
               </div>
               <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Tecnología, software y operaciones más confiables para Agrosuper
+                Tecnología, software y operaciones más confiables
               </h1>
               <p class="text-xl text-blue-100/90 leading-relaxed max-w-2xl">
-                Somos Sofnet, su socio tecnológico de confianza. Combinamos servicios de infraestructura (CCTV, redes, telefonía IP y cloud) con
+                Somos Sofnet, tu socio tecnológico de confianza. Combinamos servicios de infraestructura (CCTV, redes, telefonía IP y cloud) con
                 <strong class="text-white">dos productos propios</strong> que ayudan a operar plantas y cumplir auditorías con menos esfuerzo.
               </p>
               <div class="flex flex-col sm:flex-row gap-4 pt-2">
@@ -164,7 +164,7 @@
             Dos plataformas que llevan la operación al siguiente nivel
           </h2>
           <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-            Software desarrollado por nuestro equipo, pensado para operaciones industriales como las de Agrosuper:
+            Software desarrollado por nuestro equipo, pensado para operaciones industriales:
             activos críticos siempre visibles y auditorías que no detienen la producción.
           </p>
         </div>
@@ -297,7 +297,7 @@
             </div>
 
             <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-xl">
-              <p class="text-xs font-bold uppercase tracking-widest text-blue-200 mb-4">Aplicación en Agrosuper</p>
+              <p class="text-xs font-bold uppercase tracking-widest text-blue-200 mb-4">Casos de aplicación</p>
               <h4 class="text-2xl font-bold mb-4">Casos concretos en plantas y centros productivos</h4>
               <div class="grid sm:grid-cols-2 gap-3">
                 <div v-for="useCase in asetioUseCases" :key="useCase"
@@ -367,7 +367,7 @@
             </div>
 
             <div class="bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-8 text-white shadow-xl">
-              <p class="text-xs font-bold uppercase tracking-widest text-violet-200 mb-4">Aplicación en Agrosuper</p>
+              <p class="text-xs font-bold uppercase tracking-widest text-violet-200 mb-4">Casos de aplicación</p>
               <h4 class="text-2xl font-bold mb-4">Auditorías como un programa vivo</h4>
               <div class="grid sm:grid-cols-2 gap-3">
                 <div v-for="useCase in documentiaUseCases" :key="useCase"
@@ -428,7 +428,7 @@
             Por qué Sofnet
           </span>
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            Un partner integral para una operación como la de Agrosuper
+            Un partner integral para operaciones críticas
           </h2>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -458,7 +458,7 @@
             Siguiente paso
           </div>
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Conversemos sobre el piloto en Agrosuper
+            Conversemos sobre un piloto en tu operación
           </h2>
           <p class="text-xl text-blue-100/80 leading-relaxed">
             Definimos juntos un alcance acotado para validar valor en las primeras 6 a 8 semanas: una planta, un grupo de activos, una auditoría.
@@ -491,7 +491,7 @@
             </a>
           </div>
           <div class="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-            <a href="mailto:contacto@sofnet.cl?subject=Agendar%20reuni%C3%B3n%20Agrosuper"
+            <a href="mailto:contacto@sofnet.cl?subject=Agendar%20reuni%C3%B3n%20Sofnet"
               class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-red text-white font-bold rounded-lg hover:bg-brand-red-dark transition-all shadow-xl">
               Agendar reunión
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -508,7 +508,7 @@
       <div class="container-custom flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
         <div class="flex items-center gap-3">
           <img src="/logo-sofnet.png" alt="Sofnet" class="h-5 w-auto brightness-0 invert" />
-          <span>© {{ year }} Sofnet · Propuesta confidencial preparada para Agrosuper</span>
+          <span>© {{ year }} Sofnet · Propuesta de servicios y productos</span>
         </div>
         <NuxtLink to="/" class="hover:text-brand-red transition-colors">Volver a sofnet.cl →</NuxtLink>
       </div>
@@ -520,14 +520,13 @@
 const { isDark, toggleDarkMode } = useDarkMode()
 
 useHead({
-  title: 'Sofnet para Agrosuper — Servicios, Asetio y Documentia',
+  title: 'Sofnet — Propuesta de servicios y productos',
   meta: [
-    { name: 'description', content: 'Presentación de servicios y productos Sofnet para Agrosuper: infraestructura tecnológica, Asetio (activos críticos) y Documentia (cumplimiento ISO con IA).' },
+    { name: 'description', content: 'Servicios e infraestructura tecnológica de Sofnet, más dos productos propios: Asetio (gestión de activos críticos) y Documentia (cumplimiento ISO con IA).' },
     { name: 'robots', content: 'noindex, nofollow' },
   ],
 })
 
-const presentationDate = 'Viernes 15 de mayo, 2026'
 const year = new Date().getFullYear()
 
 const localNav = [
