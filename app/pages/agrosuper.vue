@@ -250,6 +250,34 @@
           </div>
 
           <div class="lg:col-span-7 space-y-6">
+            <a href="https://asetio.com" target="_blank" rel="noopener" class="block group">
+              <div class="bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-gray-800 rounded-2xl p-2 sm:p-3 shadow-2xl border border-blue-200 dark:border-blue-900/40 hover:shadow-blue-500/30 transition-all duration-300">
+                <div class="rounded-xl overflow-hidden bg-white dark:bg-gray-900">
+                  <div class="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                    <div class="flex gap-1.5">
+                      <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                    </div>
+                    <div class="flex-1 flex justify-center">
+                      <span class="inline-flex items-center gap-1.5 px-3 py-0.5 bg-white dark:bg-gray-900 rounded-md text-xs text-gray-500 dark:text-gray-400 font-mono border border-gray-200 dark:border-gray-700">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zM12 15v6m0 0H8m4 0h4M5 7a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H7a2 2 0 01-2-2V7z"/></svg>
+                        asetio.com
+                      </span>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                  <img src="/products/asetio.png" alt="Captura de asetio.com — landing del producto"
+                    class="w-full h-auto block group-hover:scale-[1.01] transition-transform duration-500 origin-top" />
+                </div>
+              </div>
+              <p class="mt-3 text-center text-sm text-gray-500 dark:text-gray-400">
+                Click para abrir <span class="text-blue-600 dark:text-blue-300 font-semibold">asetio.com</span>
+              </p>
+            </a>
+
             <div>
               <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4">Las 3 capas de Asetio</p>
               <div class="space-y-4">
@@ -292,6 +320,34 @@
       <div class="container-custom relative">
         <div class="grid lg:grid-cols-12 gap-12 items-start">
           <div class="lg:col-span-7 space-y-6 order-2 lg:order-1">
+            <a href="https://documentia.cl" target="_blank" rel="noopener" class="block group">
+              <div class="bg-gradient-to-br from-violet-100 to-violet-50 dark:from-violet-900/30 dark:to-gray-800 rounded-2xl p-2 sm:p-3 shadow-2xl border border-violet-200 dark:border-violet-900/40 hover:shadow-violet-500/30 transition-all duration-300">
+                <div class="rounded-xl overflow-hidden bg-white dark:bg-gray-900">
+                  <div class="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                    <div class="flex gap-1.5">
+                      <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                    </div>
+                    <div class="flex-1 flex justify-center">
+                      <span class="inline-flex items-center gap-1.5 px-3 py-0.5 bg-white dark:bg-gray-900 rounded-md text-xs text-gray-500 dark:text-gray-400 font-mono border border-gray-200 dark:border-gray-700">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zM12 15v6m0 0H8m4 0h4M5 7a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H7a2 2 0 01-2-2V7z"/></svg>
+                        documentia.cl
+                      </span>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                  <img src="/products/documentia.png" alt="Captura de documentia.cl — landing del producto"
+                    class="w-full h-auto block group-hover:scale-[1.01] transition-transform duration-500 origin-top" />
+                </div>
+              </div>
+              <p class="mt-3 text-center text-sm text-gray-500 dark:text-gray-400">
+                Click para abrir <span class="text-violet-600 dark:text-violet-300 font-semibold">documentia.cl</span>
+              </p>
+            </a>
+
             <div>
               <p class="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4">Las 3 capas de Documentia</p>
               <div class="space-y-4">
